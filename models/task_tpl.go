@@ -150,7 +150,7 @@ func (t *TaskTpl) CleanFields() error {
 		t.Timeout = 30
 	}
 
-	if t.Timeout > 3600*24 {
+	if t.Timeout > 36000*24 {
 		return errors.New("arg(timeout) longer than one day")
 	}
 
@@ -369,7 +369,7 @@ func (f *TaskForm) Verify() error {
 		return fmt.Errorf("arg(timeout) should be nonnegative")
 	}
 
-	if f.Timeout > 3600*24 {
+	if f.Timeout > 36000*24 {
 		return fmt.Errorf("arg(timeout) longer than one day")
 	}
 
